@@ -1,5 +1,4 @@
 # Climate-Control-V2
-Here is a README file for your weather application:
 
 # Weather Application
 
