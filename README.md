@@ -1,44 +1,30 @@
 # Climate-Control-V2
+Weather Application
+This is a simple weather application website built using HTML, CSS and JavaScript. It allows users to search for the current weather in a given location.
 
-# Weather Application
+Features
+Enter a location and fetch current weather data from OpenWeatherMap API
+Displays temperature, weather description, humidity and wind speed for the searched location
+Converts temperature from Celsius to Fahrenheit
+Fetches an image of the searched city from Unsplash API and sets it as background image
+Displays weather icon based on OpenWeatherMap icon code
+Fetches default weather data for Washington DC on page load
+Built With
+HTML - Structure and content
+CSS - Styling
+JavaScript - Interactivity and API calls
+OpenWeatherMap API - Used to fetch weather data
+Unsplash API - Used to fetch city images
+Deployment
+The website is deployed on Netlify and connected to a GitHub repository.
 
-This is a simple weather web application that allows users to search for the current weather in a particular city. It displays the temperature, weather description, humidity, wind speed, and icon representing the weather conditions for the searched city.
+Changes pushed to the main branch on GitHub are automatically built and deployed by Netlify.
 
-## Features
-
-- Search for weather data by city name
-- Displays temperature in Celsius and Fahrenheit
-- Shows weather description, humidity, and wind speed
-- Dynamic weather icon that changes based on weather conditions 
-- Background image of the city fetched from Unsplash API
-- Clean and responsive UI
-
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
-- [OpenWeatherMap API](https://openweathermap.org/api) to fetch weather data
-- [Unsplash API](https://unsplash.com/developers) to fetch city images
-
-## Usage
-
-- User can search for a city name in the input field and click the Search button 
-- Weather data for the searched city is fetched from OpenWeatherMap API
-- An image of the city is fetched from Unsplash API and set as the background
-- Page dynamically updates to display weather details for the searched city
-
-The app also displays weather data for a default city (Washington DC) on initial load.
-
-## Room for Improvement
-
-Some ways this app could be improved:
-
-- Add autocomplete suggestions for the search box
-- Store previously searched cities and show history
-- Add a visual graph for weather data over multiple days
-- Allow user to switch between Celsius and Fahrenheit
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+Usage
+Visit the deployed site and allow location access to see the default weather for Washington DC
+Enter a location in the text box and click "Search" to fetch weather data for that city
+The background image, weather details, icon and converted temperature will update accordingly
+Credits
+Weather icon icons from Font Awesome
+Background city images from Unsplash
+Weather data from OpenWeatherMap
