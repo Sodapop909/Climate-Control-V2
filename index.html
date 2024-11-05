@@ -72,42 +72,42 @@
     }
 
     .box {
-      background-color:black ;
-       opacity:.7 ;
-       padding :20px ;
-       border-radius :10px ;
+      background-color: black;
+      opacity: 0.7;
+      padding: 20px;
+      border-radius: 10px;
     }
 
     input[type="text"] {
-        width :50% ;
-        padding :.5rem ;
-        border-radius :.5rem ;
-        border :none ;
-     }
-     
-     input[type="text"]:focus{
-         outline:none ;
-     }
-     
-     button{
-         padding:.5rem ;
-         border-radius:.5rem ;
-         border:none ;
-         cursor:pointer ;
-     }
-     
-     button:hover{
-         background-color:#333 ;
-     }
-     
-     .element-icon{
-         margin-right :5px ;
-     }
-     
-     #weather-icon{
-         font-size :100px ;
-     }
-    </style>
+      width: 50%;
+      padding: .5rem;
+      border-radius: .5rem;
+      border: none;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+    }
+
+    button {
+      padding: .5rem;
+      border-radius: .5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    .element-icon {
+      margin-right: 5px;
+    }
+
+    #weather-icon {
+      font-size: 100px;
+    }
+  </style>
 </head>
 
 <body>
@@ -160,10 +160,7 @@
           const weatherIconElement = document.getElementById('weather-icon');
 
           const celsius = data.main.temp;
-    const fahrenheit = ((celsius * 9) / 5 + 32).toFixed(2); // Round to two decimal places
-
-    temperatureElement.textContent = `${celsius}°C`;
-    temperatureFahrenheitElement.textContent = `${fahrenheit}°F`;
+          const fahrenheit = ((celsius * 9) / 5 + 32).toFixed(2); // Round to two decimal places
 
           temperatureElement.textContent = `${celsius}°C`;
           temperatureFahrenheitElement.textContent = `${fahrenheit}°F`;
@@ -172,7 +169,7 @@
           humidityElement.textContent = `${data.main.humidity}%`;
           windElement.textContent = `${data.wind.speed} m/s`;
           cityNameElement.textContent = `Weather in ${data.name}`;
-          
+
           // Update the weather icon element with the fetched data
           let iconClass;
           switch (data.weather[0].icon) {
@@ -215,7 +212,7 @@
             default:
               iconClass = '';
           }
-          
+
           weatherIconElement.className = `fas ${iconClass}`;
         })
         .catch(error => {
@@ -242,12 +239,12 @@
         });
     }
 
-      // Function to fetch weather data for the default location (Washington, D.C.)
-  function fetchDefaultWeatherData() {
-    const defaultLocation = 'Washington, D.C.';
-    fetchWeatherData(defaultLocation);
-    fetchCityImage(defaultLocation);
-  }
+    // Function to fetch weather data for the default location (Washington, D.C.)
+    function fetchDefaultWeatherData() {
+      const defaultLocation = 'Washington, D.C.';
+      fetchWeatherData(defaultLocation);
+      fetchCityImage(defaultLocation);
+    }
 
     // Function to handle form submission
     function handleFormSubmit(event) {
@@ -260,13 +257,20 @@
       }
     }
 
-    
     // Attach event listener to the button
-  const button = document.querySelector('button');
-  button.addEventListener('click', handleFormSubmit);
+    const button = document.querySelector('button');
+    button.addEventListener('click', handleFormSubmit);
 
-  // Attach event listener to the window load event
-  window.addEventListener('load', fetchDefaultWeatherData);
+    // Attach event listener for "Enter" key press on the search input field
+    const searchBox = document.querySelector('.search-box');
+    searchBox.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        button.click(); // Trigger the search button click event when "Enter" is pressed
+      }
+    });
+
+    // Attach event listener to the window load event
+    window.addEventListener('load', fetchDefaultWeatherData);
   </script>
 </body>
 
